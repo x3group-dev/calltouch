@@ -39,4 +39,19 @@ class Result implements ResultInterface
     {
         return $this->errors;
     }
+
+    /**
+     * Получение ошибок в текстовом формате
+     *
+     * @return array
+     */
+    public function getErrorMessages(): array
+    {
+        $messages = [];
+        foreach ($this->getErrors() as $error) {
+            $messages[] = $error->getMessage();
+        }
+
+        return $messages;
+    }
 }

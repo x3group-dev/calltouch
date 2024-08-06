@@ -36,4 +36,11 @@ interface ResultInterface
      * @return ErrorInterface[]
      */
     public function getErrors(): array;
+
+    /**
+     * Получение ошибок в текстовом формате
+     *
+     * @return array
+     */
+    public function getErrorMessages(): array;
 }

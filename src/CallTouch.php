@@ -12,13 +12,8 @@ use X3Group\CallTouch\Result\ResultInterface;
 use X3Group\CallTouch\Reporters\ReportedInterface;
 use X3Group\CallTouch\Generator\GeneratorInterface;
 
-use Psr\Log\LoggerAwareTrait;
-use Psr\Log\LoggerAwareInterface;
-
-class CallTouch implements LoggerAwareInterface
+class CallTouch
 {
-    use LoggerAwareTrait;
-
     /**
      * ID кабинета к которому привязана заявка.
      * @var string
@@ -73,10 +68,6 @@ class CallTouch implements LoggerAwareInterface
             $storage = new RequestData();
             $storage->modelID = $this->modelID;
             $storage->routeKey = $this->routeKey;
-
-            if ($this->logger && $this->generator instanceof LoggerAwareInterface) {
-                $this->generator->setLogger($this->logger);
-            }
 
             $this->generator->generate($storage, $data);
 
