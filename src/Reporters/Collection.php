@@ -2,9 +2,6 @@
 
 namespace X3Group\CallTouch\Reporters;
 
-use X3Group\CallTouch\Helpers\CheckerHelper;
-use X3Group\CallTouch\Exceptions\NotImplementedException;
-
 /**
  * Включает в себя N-количество отчетов.
  * @author Daniil S.
@@ -32,15 +29,11 @@ class Collection extends AbstractReporter
     /**
      * Сформировать и отправить отчет
      *
-     * @param string $entity
+     * @param ReportedInterface $reporter
      * @return void
-     * @throws NotImplementedException
      */
-    private function send(string $entity): void
+    private function send(ReportedInterface $reporter): void
     {
-        CheckerHelper::implemented($entity, ReportedInterface::class);
-        /** @var ReportedInterface $reporter */
-        $reporter = new $entity;
         $reporter->setRequest($this->request)
             ->setResponse($this->response)
             ->setResultValidate($this->result);

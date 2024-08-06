@@ -7,17 +7,13 @@ use X3Group\CallTouch\DTO\RequestData;
 use X3Group\CallTouch\Exceptions\SystemException;
 use X3Group\CallTouch\Configuration\Config;
 use X3Group\CallTouch\Generator\GeneratorInterface;
-
-use Psr\Log\LoggerAwareInterface;
-use Psr\Log\LoggerAwareTrait;
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
 use X3Group\CallTouch\Generator\Target\TargetInterface;
 
-class Generator implements GeneratorInterface, LoggerAwareInterface
-{
-    use LoggerAwareTrait;
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
+class Generator implements GeneratorInterface
+{
     private array $generators;
     private ?ContainerInterface $map = null;
 
@@ -37,10 +33,6 @@ class Generator implements GeneratorInterface, LoggerAwareInterface
     public function generate(RequestData $storage, array $data): void
     {
         foreach ($this->getGenerators() as $generator) {
-            if ($this->logger && $generator instanceof LoggerAwareInterface) {
-                $generator->setLogger($this->logger);
-            }
-
             if ($generator instanceof TargetInterface && null !== $this->map && $this->map->has($generator->getCode())) {
                 $field = $this->map->get($generator->getCode());
                 $generator->setFields($field);
