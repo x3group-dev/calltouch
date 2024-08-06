@@ -1,0 +1,22 @@
+{
+    "name": "x3group-dev/calltouch",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "x3Group",
+            "email": "dev@x3group.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "X3Group\\CallTouch\\": "src"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "psr/log": "^3.0",
+        "psr/container": "^2.0",
+        "guzzlehttp/guzzle": "^7.9"
+    }
+}
