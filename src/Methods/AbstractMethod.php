@@ -94,7 +94,7 @@ abstract class AbstractMethod implements MethodInterface
      * ID кабинета к которому привязана заявка
      *
      * @return string
-     * @author Daniil S. GlobalArts
+     * @author Daniil S.
      */
     public function getModelID(): string
     {
@@ -116,7 +116,7 @@ abstract class AbstractMethod implements MethodInterface
      * Получение механизма формирования отчета.
      *
      * @return ReportedInterface|null
-     * @author Daniil S. GlobalArts
+     * @author Daniil S.
      */
     protected function getReporter(): ?ReportedInterface
     {
@@ -127,7 +127,7 @@ abstract class AbstractMethod implements MethodInterface
      * Получение шины общения
      *
      * @return HttpClient
-     * @author Daniil S. GlobalArts
+     * @author Daniil S.
      */
     protected function getProvider(): HttpClient
     {
