@@ -19,7 +19,6 @@ class CallbackBuilder
      * Сборщик метода отправки заявки
      *
      * @var MethodBuilder
-     * @author Daniil S.
      */
     private MethodBuilder $factory;
 
@@ -27,7 +26,6 @@ class CallbackBuilder
      * Карта свойств
      *
      * @var FieldContainer
-     * @author Daniil S.
      */
     private FieldContainer $map;
 
@@ -35,7 +33,6 @@ class CallbackBuilder
      * Ключ формы
      *
      * @var string
-     * @author Daniil S.
      */
     private string $routeKey = '';
 
@@ -50,7 +47,6 @@ class CallbackBuilder
      * Создание метода отправки заявок обратного звонка
      *
      * @return MethodInterface
-     * @author Daniil S. GlobalArts
      */
     public function make(): MethodInterface
     {
@@ -65,7 +61,6 @@ class CallbackBuilder
      *
      * @param string $routeKey
      * @return $this
-     * @author Daniil S. GlobalArts
      */
     public function setRouteKey(string $routeKey): self
     {
@@ -80,7 +75,6 @@ class CallbackBuilder
      *
      * @param ReportedInterface $reported
      * @return $this
-     * @author Daniil S.
      */
     public function addReporter(ReportedInterface $reported): self
     {
@@ -92,7 +86,6 @@ class CallbackBuilder
      * Получение карты свойств
      *
      * @return FieldContainer
-     * @author Daniil S.
      */
     public function getFieldMap(): FieldContainer
     {
