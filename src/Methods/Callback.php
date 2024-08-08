@@ -12,7 +12,7 @@ class Callback extends MethodDecorator
      * Ключ формы
      *
      * @var string
-     * @author Daniil S. GlobalArts
+     * @author Daniil S.
      */
     private string $routeKey = '';
 
@@ -21,7 +21,7 @@ class Callback extends MethodDecorator
      *
      * @param array $data
      * @return ResultInterface
-     * @author Daniil S. GlobalArts
+     * @author Daniil S.
      */
     public function send(array $data): ResultInterface
     {
@@ -34,7 +34,7 @@ class Callback extends MethodDecorator
      *
      * @param string $routeKey
      * @return $this
-     * @author Daniil S. GlobalARts
+     * @author Daniil S.
      */
     public function setRouteKey(string $routeKey): self
     {
@@ -47,6 +47,7 @@ class Callback extends MethodDecorator
      *
      * @param ReportedInterface $reported
      * @return self
+     * @author Daniil S.
      */
     public function setReporter(ReportedInterface $reported): self
     {
@@ -59,6 +60,7 @@ class Callback extends MethodDecorator
      *
      * @param GeneratorInterface $generator
      * @return self
+     * @author Daniil S.
      */
     public function setGenerator(GeneratorInterface $generator): self
     {
@@ -71,6 +73,7 @@ class Callback extends MethodDecorator
      *
      * @param string $modelID
      * @return self
+     * @author Daniil S.
      */
     public function setModelID(string $modelID): self
     {
@@ -82,6 +85,7 @@ class Callback extends MethodDecorator
      * Метод отправки заявки в CallTouch
      *
      * @return string
+     * @author Daniil S.
      */
     public function getMethod(): string
     {
@@ -92,7 +96,7 @@ class Callback extends MethodDecorator
      * ID кабинета к которому привязана заявка
      *
      * @return string
-     * @author Daniil S. GlobalArts
+     * @author Daniil S.
      */
     public function getModelID(): string
     {
