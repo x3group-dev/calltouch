@@ -17,7 +17,6 @@ interface MethodInterface
      *
      * @param array $data Данные формы
      * @return ResultInterface
-     * @author Daniil S.
      */
     public function send(array $data): ResultInterface;
 
@@ -26,7 +25,6 @@ interface MethodInterface
      *
      * @param ReportedInterface $reported
      * @return self
-     * @author Daniil S.
      */
     public function setReporter(ReportedInterface $reported): self;
 
@@ -35,7 +33,6 @@ interface MethodInterface
      *
      * @param GeneratorInterface $generator
      * @return self
-     * @author Daniil S.
      */
     public function setGenerator(GeneratorInterface $generator): self;
 
@@ -44,7 +41,6 @@ interface MethodInterface
      *
      * @param string $modelID
      * @return self
-     * @author Daniil S.
      */
     public function setModelID(string $modelID): self;
 
@@ -52,7 +48,6 @@ interface MethodInterface
      * Метод отправки заявки в CallTouch
      *
      * @return string
-     * @author Daniil S.
      */
     public function getMethod(): string;
 
@@ -60,7 +55,6 @@ interface MethodInterface
      * ID кабинета к которому привязана заявка.
      *
      * @return string
-     * @author Daniil S. GlobalArts
      */
     public function getModelID(): string;
 }
