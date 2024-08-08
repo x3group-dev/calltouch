@@ -23,6 +23,7 @@ class CallbackValidator implements ValidatorInterface
         $body = $response->getBody();
         $body->rewind();
         $contend = json_decode($body->getContents(), JSON_OBJECT_AS_ARRAY) ?? [];
+        $result->setData($contend);
         $data = $contend['data'] ?? [];
 
         $dataError = $data['apiErrorData'] ?? [];

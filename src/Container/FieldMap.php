@@ -12,8 +12,7 @@ class FieldMap extends Container
      */
     public function setPhone(array $fields): self
     {
-        $this->set('phone', $fields);
-        return $this;
+        return $this->set('phone', $fields);
     }
 
     /**
@@ -24,8 +23,7 @@ class FieldMap extends Container
      */
     public function setCallUrl(array $fields): self
     {
-        $this->set('callUrl', $fields);
-        return $this;
+        return $this->set('callUrl', $fields);
     }
 
     /**
@@ -36,7 +34,18 @@ class FieldMap extends Container
      */
     public function setFields(array $fields): self
     {
-        $this->set('fields', $fields);
-        return $this;
+        return $this->set('fields', $fields);
+    }
+
+    /**
+     * Указание кодов хранения тегов заявки
+     *
+     * @param array $tags
+     * @return self
+     * @author Daniil S.
+     */
+    public function setTags(array $tags): self
+    {
+        return $this->set('tags', $tags);
     }
 }

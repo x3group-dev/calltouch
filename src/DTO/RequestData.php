@@ -62,6 +62,8 @@ class RequestData
     public string $utmTerm = '';
     public string $utmContent = '';
 
+    public array $tags = [];
+
     /**
      * Добавить новое свойство
      *

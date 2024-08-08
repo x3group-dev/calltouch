@@ -15,6 +15,8 @@ return [
             Target\Utm::class,
             Target\Session::class,
             Target\Fields::class,
+            Target\Tags::class,
+            Target\RouteKey::class,
         ],
         'reporters' => [],
         'validator' => Validators\CallbackValidator::class,

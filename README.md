@@ -114,12 +114,10 @@ $builder = new MethodBuilder($token, MethodsEnum::CallBack);
 $callTouch = $builder->make();
 ```
 
-Пример отправки заявки на обратный звонок
+Пример отправки заявки на <a href="https://www.calltouch.ru/support/servernoe-callback-api/">обратный звонок</a>
 
 ```injectablephp
-use X3Group\CallTouch\MethodsEnum;
-use X3Group\CallTouch\Container\FieldMap;
-use X3Group\CallTouch\Builder\MethodBuilder;
+use X3Group\CallTouch\Builder\CallbackBuilder;
 
 $routeKey = "myKey";
 $token = 'your access token...';
@@ -128,13 +126,12 @@ $formData = [
     'USER_PHONE' => '79099999999',
     'NAME' => "Игорь",
     'EMAIL' => "test@mail.ru",
-    'NOW_PAGE' => 'http://test.ru'
+    'NOW_PAGE' => 'http://test.ru',
 ];
 
-$builder = new MethodBuilder($token, MethodsEnum::CallBack);
-
-$map = new FieldMap();
-$map->setPhone(['USER_PHONE', 'PERSONAL_PHONE'])
+$builder = new CallbackBuilder($token);
+$builder->getFieldMap()
+    ->setPhone(['USER_PHONE', 'PERSONAL_PHONE'])
     ->setCallUrl(['NOW_PAGE'])
     ->setFields([
         'NAME',
@@ -142,18 +139,15 @@ $map->setPhone(['USER_PHONE', 'PERSONAL_PHONE'])
         'NOW_PAGE'
     ]);
 
-$builder->setFieldMap($map);
-$builder->addReporter(new EmailReporter);
-
-$callTouch = $builder->make();
-$callTouch->setRouteKey($routeKey);
-
-$callTouch->send($formData);
+$builder->setRouteKey($routeKey)
+    ->addReporter(new EmailReporter)
+    ->make()
+    ->send($formData);
 ```
 
 Если мы имеем несколько кабинетов CallTouch, то необходимо в явном виде передать желаемый кабинет.
 Если будет указан несуществующий кабинет, то произойдет отправка заявки без указания сессии.
 
 ```injectablephp
-$callTouch->setModelID('model_id');
+$callTouch->setModelID('your model_id ...');
 ```

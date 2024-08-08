@@ -34,11 +34,12 @@ class Container implements ContainerInterface
      *
      * @param string $id
      * @param mixed $value
-     * @return void
+     * @return Container
      */
-    public function set(string $id, mixed $value): void
+    public function set(string $id, mixed $value): self
     {
         $this->data[$id] = $value;
+        return $this;
     }
 
     /**

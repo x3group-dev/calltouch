@@ -34,7 +34,8 @@ class CallbackNormalizer implements NormalizerInterface
             'utmCampaign' => $data->utmCampaign,
             'utmContent' => $data->utmContent,
             'utmTerm' => $data->utmTerm,
-            'callUrl' => $data->url
+            'callUrl' => $data->url,
+            'tags' => $data->tags
         ];
 
         return json_encode(array_filter($fields)) ?: '';

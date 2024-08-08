@@ -11,9 +11,9 @@ interface ContainerInterface extends PSR
      *
      * @param string $id
      * @param mixed $value
-     * @return void
+     * @return self
      */
-    public function set(string $id, mixed $value): void;
+    public function set(string $id, mixed $value): self;
 
     /**
      * Удаление записи

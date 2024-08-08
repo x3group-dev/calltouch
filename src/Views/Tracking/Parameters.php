@@ -6,7 +6,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         let interval = setInterval(() => {
-            if (!isFunction(window['ct']) || !window.['ct']('calltracking_params')) {
+            if (!isFunction(window['ct']) || !window.ct('calltracking_params')) {
                 return;
             }
 
@@ -23,5 +23,5 @@
             let getType = {};
             return value && getType.toString.call(value) === '[object Function]';
         }
-    }
+    });
 </script>

@@ -2,7 +2,8 @@
 
 namespace X3Group\CallTouch\Builder;
 
-use X3Group\CallTouch\CallTouch;
+use X3Group\CallTouch\Methods\CallTouch;
+use X3Group\CallTouch\Methods\MethodInterface;
 use X3Group\CallTouch\MethodsEnum;
 use X3Group\CallTouch\Reporters\Collection;
 use X3Group\CallTouch\Container\ContainerInterface;
@@ -48,9 +49,9 @@ class MethodBuilder
     /**
      * Создание метода отправки заявки в CallTouch
      *
-     * @return CallTouch
+     * @return MethodInterface
      */
-    public function make(): CallTouch
+    public function make(): MethodInterface
     {
         if ($this->mapFields) {
             $this->generator->setMap($this->mapFields);
@@ -67,21 +68,23 @@ class MethodBuilder
      * Хранилище маршрутизации, для генераторов данных
      *
      * @param ContainerInterface $container
-     * @return void
+     * @return self
      */
-    public function setFieldMap(ContainerInterface $container): void
+    public function setFieldMap(ContainerInterface $container): self
     {
         $this->mapFields = $container;
+        return $this;
     }
 
     /**
      * Добавление механизма формирования отчета
      *
      * @param ReportedInterface $reported
-     * @return void
+     * @return self
      */
-    public function addReporter(ReportedInterface $reported): void
+    public function addReporter(ReportedInterface $reported): self
     {
         $this->reporter->add($reported);
+        return $this;
     }
 }
