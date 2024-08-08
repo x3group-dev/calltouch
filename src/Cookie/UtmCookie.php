@@ -4,7 +4,7 @@ namespace X3Group\CallTouch\Cookie;
 
 class UtmCookie
 {
-    protected string $key = "X3GROUP_CT_UTM";
+    protected string $key = "x3group_ct_utm";
 
     /**
      * Записать данные в сессию
