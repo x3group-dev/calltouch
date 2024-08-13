@@ -1,6 +1,6 @@
 <h1>Интеграция с сервисом CallTouch</h1>
 
-<a href="https://www.calltouch.ru/">Ссылка на сервис</a>
+<a href="https://my.calltouch.ru/user/registration/?ref=x3group.ru">Ссылка на сервис</a>
 
 <h2>Установка</h2>
 
